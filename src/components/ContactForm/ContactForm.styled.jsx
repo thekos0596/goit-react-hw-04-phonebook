@@ -1,48 +1,73 @@
 import styled from '@emotion/styled';
+import { Form, Field, ErrorMessage } from 'formik';
 
-export const Form = styled.form`
-  margin: 0px auto 20px;
-  padding: 20px;
-  max-width: 50%;
+export const FormContainer = styled.div`
+  text-align: center;
 `;
-export const InputWrapper = styled.div`
-  margin-bottom: 30px;
-  max-width: 100%;
+
+export const FormEl = styled(Form)`
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  gap: 48px;
 `;
 
-export const Label = styled.label`
-  margin-bottom: 10px;
-  font-weight: 500;
+export const FormLabel = styled.label`
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 8px;
   font-size: 24px;
-  color: var(--primary);
+  transition: color 250ms ease;
+
+  &:hover,
+  &:focus {
+    color: #3160cd;
+  }
 `;
 
-export const Input = styled.input`
-  padding: 5px 10px;
-  width: 100%;
+export const FormInput = styled(Field)`
+  width: 400px;
   font-size: 24px;
-  color: var(--primary);
-  background-color: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 5px;
+  border-radius: 20px;
+  border: 1px solid #959595;
+  padding: 16px;
+  outline: none;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+
+  &::placeholder {
+    color: #959595;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: #3160cd;
+    box-shadow: 0px 1px 7px 1px #4e4e4e;
+  }
 `;
 
-export const Btn = styled.button`
-  padding: 10px 25px;
-  font-size: 24px;
+export const ErrorMessageForUser = styled(ErrorMessage)`
+  width: 400px;
+  text-align: justify;
+  font-size: 18px;
+`;
 
-  color: var(--accent);
-  background-color: transparent;
-  border-radius: 5px;
-  border: 1px solid var(--accent);
+export const FormButton = styled.button`
+  font-size: 24px;
+  background-color: #3160cd;
+  color: #f4f4f4;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  width: 240px;
+  padding: 8px 16px;
   cursor: pointer;
-  transition: all 250ms ease-in-out;
-  :hover {
-    color: var(--bg);
-    background-color: var(--accent);
+  transition: outline-color 250ms ease, box-shadow 250ms ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 2px 6px 2px #4e4e4e;
+    outline: 1px solid #f4f4f4;
   }
 `;
